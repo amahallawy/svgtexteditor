@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Config from './config';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './fontawesome';
+
+import Header from './Components/header';
+import Editor from './Components/editor';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      language: Config.languages[0]
+    }
+  }
+
+  render() {
+    return (
+      <div className="bg-blue-400 flex flex-col h-screen">
+        <Header />
+        <Editor />
+      </div>
+    );
+  }
 }
 
 export default App;
